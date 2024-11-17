@@ -3,13 +3,15 @@
     --red: #FF0000;
     --gray: #808080;
     --white: #FFFFFF;
+    --max-width: 1200px;
+    --font-family: 'Montserrat', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-family);
 }
 
 /* Header Styles */
@@ -23,13 +25,12 @@
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 
 .logo {
     color: var(--white);
@@ -70,10 +71,21 @@
         background-color: var(--black);
         padding: 1rem;
         border-radius: 8px;
+        width: 200px;
+        transition: transform 0.3s ease-out;
+        transform: translateX(100%);
     }
 
     .hamburger {
         display: block;
+    }
+
+    .nav-menu[aria-expanded="true"] {
+        transform: translateX(0);
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
     }
 }
 
@@ -123,7 +135,7 @@
 /* Benefits Section */
 .benefits {
     padding: 4rem 2rem;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 

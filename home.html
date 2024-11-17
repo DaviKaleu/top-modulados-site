@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Top Modulados - Custom Furniture Solutions</title>
     <style>
         :root {
@@ -80,6 +81,10 @@
 
             .hamburger {
                 display: block;
+            }
+
+            .nav-menu[aria-expanded="true"] {
+                display: flex;
             }
         }
 
@@ -168,11 +173,18 @@
 </head>
 <body>
 
+<!-- Header -->
 <header class="header" aria-label="Main Navigation">
     <nav class="nav-container">
-        <div class="logo">Top Modulados</div>
-        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu">☰</div>
-        <div class="nav-menu" role="navigation">
+        <div class="logo">
+            <a href="index.html" class="logo-link" aria-label="Homepage">Top Modulados</a>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false">☰</div>
+        
+        <!-- Navigation Menu -->
+        <div class="nav-menu" role="navigation" aria-hidden="true">
             <a href="index.html" class="nav-link" aria-label="Home">Home</a>
             <a href="builder.html" class="nav-link" aria-label="Project Builder">Project Builder</a>
             <a href="budget.html" class="nav-link" aria-label="Budget">Budget</a>
@@ -183,6 +195,7 @@
 </header>
 
 <main>
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Create Your Dream Furniture</h1>
@@ -191,6 +204,7 @@
         </div>
     </section>
 
+    <!-- Benefits Section -->
     <section class="benefits">
         <div class="benefits-grid">
             <div class="benefit-card">
@@ -221,13 +235,22 @@
             audioContext = new (window.AudioContext || window.webkitAudioContext)();
             console.log("AudioContext iniciado!");
         }
-        // You can add audio play or logic after this
     }
 
     // Toggle navigation menu on smaller screens
     function toggleMenu() {
         const navMenu = document.querySelector('.nav-menu');
-        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        const hamburger = document.querySelector('.hamburger');
+        const isMenuOpen = navMenu.style.display === 'flex';
+        
+        // Toggle navigation menu
+        navMenu.style.display = isMenuOpen ? 'none' : 'flex';
+        
+        // Update the aria-expanded attribute
+        hamburger.setAttribute('aria-expanded', !isMenuOpen);
+        
+        // Update the aria-hidden attribute
+        navMenu.setAttribute('aria-hidden', isMenuOpen);
     }
 
     // Scroll effect for header background
