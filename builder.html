@@ -7,23 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header" aria-label="Main Navigation">
-        <nav class="nav-container">
+    <header class="header">
+        <div class="nav-container">
             <div class="logo">Top Modulados</div>
-            <div class="nav-menu" role="navigation">
+            <nav class="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="builder.html" class="nav-link">Project Builder</a>
-                <a href="budget.html" class="nav-link">Budget</a>
-                <a href="about.html" class="nav-link">About Us</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-        </nav>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <h1>Build Your Custom Project</h1>
-        <p>This is the project builder page.</p>
-        <a href="index.html">Back to Home</a>
-    </main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Project Builder</h1>
+            <p class="hero-subtitle">Start creating your custom project</p>
+            <button class="cta-button" onclick="window.location.href='builder.html'">Create Your Project</button>
+        </div>
+    </section>
+
+    <!-- Content for Project Builder goes here -->
+    <div class="builder-content">
+        <h2>Customize your project</h2>
+        <p>Here you can build your own project.</p>
+    </div>
 </body>
 </html>
