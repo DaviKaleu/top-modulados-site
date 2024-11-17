@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Top Modulados - Custom Furniture Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="header" aria-label="Main Navigation">
+    <nav class="nav-container">
+        <div class="logo">Top Modulados</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-menu" role="navigation">
+            <a href="index.html" class="nav-link" aria-label="Home">Home</a>
+            <a href="builder.html" class="nav-link" aria-label="Project Builder">Project Builder</a>
+            <a href="budget.html" class="nav-link" aria-label="Budget">Budget</a>
+            <a href="about.html" class="nav-link" aria-label="About Us">About Us</a>
+            <a href="contact.html" class="nav-link" aria-label="Contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Create Your Dream Furniture</h1>
+            <p class="hero-subtitle">Custom designs tailored to your space</p>
+            <button class="cta-button" onclick="window.location.href='builder.html'">Create Your Project Now</button>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-pencil-ruler benefit-icon"></i>
+                <h3>Custom Design</h3>
+                <p>Create furniture that perfectly fits your space</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-calculator benefit-icon"></i>
+                <h3>Instant Budget</h3>
+                <p>Get real-time pricing for your project</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-sync benefit-icon"></i>
+                <h3>Updated Prices</h3>
+                <p>Always get the most current market prices</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    function toggleMenu() {
+        const navMenu = document.querySelector('.nav-menu');
+        navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Add scroll effect to header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        header.style.background = window.scrollY > 100 ? 'rgba(0,0,0,0.9)' : 'var(--black)';
+    });
+</script>
+
+</body>
+</html>
